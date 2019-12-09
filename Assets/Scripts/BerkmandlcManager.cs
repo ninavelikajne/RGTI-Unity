@@ -15,7 +15,15 @@ public class BerkmandlcManager : MonoBehaviour
    
     void Update()
     {
-        move();
+        if (!PauseButton.pause)
+        {
+            move();
+        }
+        else 
+        {
+            transform.localRotation = Quaternion.Euler(new Vector4(0, 0, 0));
+        }
+      
     }
 
     void move()

@@ -2,8 +2,23 @@
 using UnityEngine.UI;
 public class PauseButton : MonoBehaviour
 {
+    public static bool pause;
+
+    void Start() 
+    {
+        pause = false;
+    }
+
     public void TogglePause()
     {
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        if (pause) //resume
+        {
+            Time.timeScale = 1f;
+        }
+        else //pause
+        {
+            Time.timeScale = 0f;
+        }
+        pause = !pause;
     }
 }
