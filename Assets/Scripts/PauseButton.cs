@@ -11,12 +11,14 @@ public class PauseButton : MonoBehaviour
 
     public void TogglePause()
     {
-        if (pause) //resume
+        if (pause)
         {
+            AudioListener.pause = false;
             Time.timeScale = 1f;
         }
-        else //pause
+        else
         {
+            AudioListener.pause = true;
             Time.timeScale = 0f;
         }
         pause = !pause;
