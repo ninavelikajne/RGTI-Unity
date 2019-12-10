@@ -10,6 +10,11 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
+    public static void StartFromStart()
+    {
+        SceneManager.LoadScene("Start", LoadSceneMode.Single);
+    }
+
     public static void GameOver()
     {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);

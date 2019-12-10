@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MuteButton : MonoBehaviour
+public class Button : MonoBehaviour
 {
     public bool muted;
+
     void Start()
     {
         muted = false;
@@ -21,5 +22,16 @@ public class MuteButton : MonoBehaviour
             AudioListener.volume = 0f;
         }
         muted = !muted;
+    }
+
+    public void ToGame()
+    {
+        GameManager.pause = !GameManager.pause;
+        PauseButton.TogglePause();
+    }
+
+    public void ToStart() 
+    {
+        ScenesManager.StartFromStart();
     }
 }

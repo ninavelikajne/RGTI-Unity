@@ -9,23 +9,27 @@ public class GameManager : MonoBehaviour
     public Camera cameraOne;
     public Camera cameraTwo;
 
+    public static bool pause;
+
     void Start() 
     {
+        pause = false;
         cameraOne.enabled = true;
         cameraTwo.enabled = false;
         Cursor.visible = false;
         keyIsCollected = false;
         score = 0;
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.visible = true;
+            pause = !pause;
+            PauseButton.TogglePause();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Debug.Log("c");
             cameraOne.enabled = !cameraOne.enabled;
             cameraTwo.enabled = !cameraTwo.enabled;
         }

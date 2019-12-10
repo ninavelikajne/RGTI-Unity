@@ -1,26 +1,34 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 public class PauseButton : MonoBehaviour
 {
-    public static bool pause;
+    private static GameObject menu;
 
-    void Start() 
+    void Start()
     {
-        pause = false;
+        menu = this.transform.parent.gameObject;
+        menu.SetActive(false);
+
     }
 
-    public void TogglePause()
+    public static void TogglePause()
     {
-        if (pause)
+        if (GameManager.pause)
         {
-            AudioListener.pause = false;
-            Time.timeScale = 1f;
+            Cursor.visible = true;
+            AudioListener.pause = true;
+            menu.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
         {
-            AudioListener.pause = true;
-            Time.timeScale = 0f;
+            Cursor.visible = false;
+            AudioListener.pause = false;
+            Time.timeScale = 1f;
+            menu.SetActive(false);
         }
-        pause = !pause;
     }
+
 }
