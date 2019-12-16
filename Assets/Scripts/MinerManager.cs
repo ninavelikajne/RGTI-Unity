@@ -7,16 +7,19 @@ public class MinerManager : MonoBehaviour
     public bool vertical;
     public int speed;
     public int changeTime;
+    public GameObject target;
 
     private Rigidbody rigidbody;
     private float timer;
     private int direction = 1;
     private Vector3 lookDirection;
+    private int dwarfSeen;
     void Start()
     {
         
         rigidbody = GetComponent<Rigidbody>();
         timer = changeTime;
+        dwarfSeen = 0;
         if (vertical) 
         {
             lookDirection = new Vector3(0,0,1);
@@ -35,44 +38,55 @@ public class MinerManager : MonoBehaviour
 
     void move() 
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (dwarfSeen == 0)
         {
-            direction = -direction;
-            timer = changeTime;
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                direction = -direction;
+                timer = changeTime;
+                if (vertical)
+                {
+                    lookDirection.z = -lookDirection.z;
+                }
+                else
+                {
+                    lookDirection.x = -lookDirection.x;
+                }
+            }
+
+            Vector3 position = rigidbody.position;
+
+
             if (vertical)
             {
-                Debug.Log(lookDirection.y);
-                lookDirection.z = -lookDirection.z;
+                position.z = position.z + Time.deltaTime * speed * direction;
             }
-            else 
+            else
             {
-                lookDirection.x = -lookDirection.x;
+                position.x = position.x + Time.deltaTime * speed * direction;
             }
+
+            rigidbody.MovePosition(position);
         }
-
-        Vector3 position = rigidbody.position;
-
-        if (vertical)
+        else 
         {
-            position.z = position.z + Time.deltaTime * speed * direction;
+            this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.08f);
+            dwarfSeen--;
         }
-        else
-        {
-            position.x = position.x + Time.deltaTime * speed * direction;
-        }
-
-        rigidbody.MovePosition(position);
     }
 
     void look() 
     {
-        Debug.DrawRay(transform.position, lookDirection * 5, Color.green);
+        Debug.DrawRay(transform.position, lookDirection * 3, Color.green); 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, lookDirection * 5, out hit, 3f, LayerMask.GetMask("Berkmandlc"))) 
+        if (Physics.Raycast(transform.position, lookDirection, out hit, 3, LayerMask.GetMask("Berkmandlc")))
         {
             if (hit.collider != null)
             {
+                dwarfSeen = 1000;
+                BerkmandlcManager manager = target.GetComponent<BerkmandlcManager>();
+                manager.speed = 7;
                 Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
             }
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BerkmandlcManager : MonoBehaviour
 {
 
-    private int speed; 
+    public int speed; 
 
     void Start()
     {

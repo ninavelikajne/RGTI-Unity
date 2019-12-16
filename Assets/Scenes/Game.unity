@@ -1012,6 +1012,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1596546973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1364568573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5173677643446328804, guid: 5394a0ba1f64b7540b1b64185436daa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5173677642729545856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1469605872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5173677643446328809, guid: 5394a0ba1f64b7540b1b64185436daa7,
@@ -1027,9 +1033,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 964097290107783238, guid: f42d125403ff71f40849cac032ed9e73,
         type: 3}
-      propertyPath: vertical
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1364568573}
     - target: {fileID: 5208923414026605284, guid: f42d125403ff71f40849cac032ed9e73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1242,6 +1248,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 732235067}
     m_Modifications:
+    - target: {fileID: 964097290107783238, guid: f42d125403ff71f40849cac032ed9e73,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1364568573}
     - target: {fileID: 5208923414026605284, guid: f42d125403ff71f40849cac032ed9e73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1752,6 +1763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Berkmandlc
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173677643446328804, guid: 5394a0ba1f64b7540b1b64185436daa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5173677643446328809, guid: 5394a0ba1f64b7540b1b64185436daa7,
         type: 3}
