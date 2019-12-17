@@ -38,7 +38,7 @@ public class MinerManager : MonoBehaviour
 
     void move() 
     {
-        if (dwarfSeen == 0)
+        if (dwarfSeen <= 0)
         {
             timer -= Time.deltaTime;
             if (timer < 0)
@@ -71,7 +71,7 @@ public class MinerManager : MonoBehaviour
         }
         else 
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.08f);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.06f);
             dwarfSeen--;
         }
     }
@@ -84,7 +84,7 @@ public class MinerManager : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                dwarfSeen = 1000;
+                dwarfSeen = 600;
                 BerkmandlcManager manager = target.GetComponent<BerkmandlcManager>();
                 manager.speed = 7;
                 Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
