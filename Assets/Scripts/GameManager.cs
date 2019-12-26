@@ -36,11 +36,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timerCount();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pause = !pause;
             PauseButton.TogglePause();
         }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             cameraOne.enabled = !cameraOne.enabled;
