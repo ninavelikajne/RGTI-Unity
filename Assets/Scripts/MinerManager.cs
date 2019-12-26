@@ -87,7 +87,6 @@ public class MinerManager : MonoBehaviour
                 dwarfSeen = 600;
                 BerkmandlcManager manager = target.GetComponent<BerkmandlcManager>();
                 manager.speed = 7;
-                Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
             }
         }
     }

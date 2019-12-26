@@ -6,34 +6,45 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static bool keyIsCollected;
+    public static int difficulty;  //{0,1,2}
     public static int score;
+    public static bool pause;
+
     public Camera cameraOne;
     public Camera cameraTwo;
     public Text scoreText;
     public Text timerText;
-    public static bool pause;
 
     private float timer;
     void Start() 
     {
         timer = 0f;
-        timerText.text = "";
+        timerText.text = "00:00";
         scoreText.text = "Točke: 0";
-        pause = false;
         cameraOne.enabled = true;
         cameraTwo.enabled = false;
         Cursor.visible = false;
         keyIsCollected = false;
         score = 0;
+
+        pause = false;
+        Cursor.visible = false;
+        AudioListener.pause = false;
+        Time.timeScale = 1f;
     }
 
     void Update()
     {
+        timerCount();
+    }
+
+    void timerCount() 
+    {
         timer += Time.deltaTime;
         float minutes = Mathf.Floor(timer / 60);
         float seconds = Mathf.RoundToInt(timer % 60);
-        string m="";
-        string s="";
+        string m = "";
+        string s = "";
         if (minutes < 10)
         {
             m = "0" + minutes.ToString();
@@ -42,7 +53,7 @@ public class GameManager : MonoBehaviour
         {
             s = "0" + Mathf.RoundToInt(seconds).ToString();
         }
-        timerText.text = m+":"+s + "  ";
+        timerText.text = m + ":" + s + "  ";
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pause = !pause;
@@ -54,7 +65,6 @@ public class GameManager : MonoBehaviour
             cameraTwo.enabled = !cameraTwo.enabled;
         }
 
-        scoreText.text="Točke: " + score.ToString();
-
+        scoreText.text = "Točke: " + score.ToString();
     }
 }
