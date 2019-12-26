@@ -36,6 +36,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timerCount();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = !pause;
+            PauseButton.TogglePause();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            cameraOne.enabled = !cameraOne.enabled;
+            cameraTwo.enabled = !cameraTwo.enabled;
+        }
+
+        scoreText.text = "Točke: " + score.ToString();
     }
 
     void timerCount() 
@@ -49,22 +61,21 @@ public class GameManager : MonoBehaviour
         {
             m = "0" + minutes.ToString();
         }
+        else
+        {
+            s = Mathf.RoundToInt(minutes).ToString();
+        }
+
+
         if (seconds < 10)
         {
             s = "0" + Mathf.RoundToInt(seconds).ToString();
         }
-        timerText.text = m + ":" + s + "  ";
-        if (Input.GetKeyDown(KeyCode.Escape))
+        else 
         {
-            pause = !pause;
-            PauseButton.TogglePause();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            cameraOne.enabled = !cameraOne.enabled;
-            cameraTwo.enabled = !cameraTwo.enabled;
+            s = Mathf.RoundToInt(seconds).ToString();
         }
 
-        scoreText.text = "Točke: " + score.ToString();
+        timerText.text = m + ":" + s + "  ";
     }
 }

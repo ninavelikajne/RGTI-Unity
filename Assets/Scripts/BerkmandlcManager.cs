@@ -70,6 +70,8 @@ public class BerkmandlcManager : MonoBehaviour
         }
         else if (col.tag == "Food") 
         {
+            Debug.Log("jum");
+            Destroy(col.gameObject);
             GameManager.score++;
         }
         else if (col.tag == "Key") 
