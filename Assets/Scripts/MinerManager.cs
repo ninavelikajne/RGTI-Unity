@@ -84,6 +84,7 @@ public class MinerManager : MonoBehaviour
         {
             if (hit.collider != null)
             {
+                target = hit.collider.gameObject;
                 dwarfSeen = 600;
                 BerkmandlcManager manager = target.GetComponent<BerkmandlcManager>();
                 manager.speed = 7;

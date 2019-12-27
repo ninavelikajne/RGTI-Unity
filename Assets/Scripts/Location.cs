@@ -11,7 +11,7 @@ public class Location {
     public Location(float x, float y, float z) {
         this.x = x;
         this.y = y;
-        this.z = y;
+        this.z = z;
     }
 }
 

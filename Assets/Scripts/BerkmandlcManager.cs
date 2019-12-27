@@ -14,7 +14,7 @@ public class BerkmandlcManager : MonoBehaviour
    
     void Update()
     {
-        Debug.Log(transform.localPosition);
+        //Debug.Log(transform.localPosition);
         if (!GameManager.pause)
         {
             move();
@@ -75,6 +75,7 @@ public class BerkmandlcManager : MonoBehaviour
         }
         else if (col.tag == "Key") 
         {
+            Destroy(col.gameObject);
             GameManager.keyIsCollected = true;
         }
         else if (col.tag == "Home" && GameManager.keyIsCollected) 

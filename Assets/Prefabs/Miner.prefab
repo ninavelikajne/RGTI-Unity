@@ -110,7 +110,7 @@ MonoBehaviour:
   vertical: 0
   speed: 3
   changeTime: 3
-  target: {fileID: 0}
+  target: {fileID: 5173677643446328804, guid: 5394a0ba1f64b7540b1b64185436daa7, type: 3}
 --- !u!54 &1855193187
 Rigidbody:
   m_ObjectHideFlags: 0
