@@ -5,8 +5,7 @@ using UnityEngine;
 public class BerkmandlcManager : MonoBehaviour
 {
 
-    public int speed; 
-
+    public int speed;
     void Start()
     {
         speed = 5;
@@ -28,25 +27,25 @@ public class BerkmandlcManager : MonoBehaviour
         {
             Vector3 position = transform.right * speed * Time.deltaTime;
             position[1] = 0f;
-            transform.localPosition -= position;
+            GetComponent<Rigidbody>().MovePosition(transform.localPosition-position);
         }
         if (Input.GetKey(KeyCode.D))
         {
             Vector3 position = transform.right * speed * Time.deltaTime;
             position[1] = 0f;
-            transform.localPosition += position;
+            GetComponent<Rigidbody>().MovePosition(transform.localPosition + position);
         }
         if (Input.GetKey(KeyCode.W))
         {
             Vector3 position = transform.forward * speed * Time.deltaTime;
             position[1] = 0f;
-            transform.localPosition += position;
+            GetComponent<Rigidbody>().MovePosition(transform.localPosition + position);
         }
         if (Input.GetKey(KeyCode.S))
         {
             Vector3 position = transform.forward * speed * Time.deltaTime;
             position[1] = 0f;
-            transform.localPosition -= position;
+            GetComponent<Rigidbody>().MovePosition(transform.localPosition - position);
         }
 
         float mouseX = (Input.mousePosition.x / Screen.width) - 0.5f;
@@ -59,7 +58,7 @@ public class BerkmandlcManager : MonoBehaviour
         {
             mouseY = -0.1f;
         }
-        transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 90f), mouseX * 360f, transform.localRotation.z));
+        GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector4(-1f * (mouseY * 90f), mouseX * 360f, transform.localRotation.z)));
     }
 
     void OnTriggerEnter(Collider col)
