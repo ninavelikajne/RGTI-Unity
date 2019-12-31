@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BerkmandlcManager : MonoBehaviour
 {
-
+    public AudioClip eatingSound;
+    public AudioClip keySound;
+    
+    
     public int speed;
     void Start()
     {
@@ -70,14 +73,18 @@ public class BerkmandlcManager : MonoBehaviour
         else if (col.collider.tag == "Food") 
         {
             Destroy(col.gameObject);
+            GetComponent<AudioSource>().clip=eatingSound;
+            GetComponent<AudioSource>().Play();
             GameManager.score++;
         }
         else if (col.collider.tag == "Key") 
         {
             Destroy(col.gameObject);
+            GetComponent<AudioSource>().clip=keySound;
+            GetComponent<AudioSource>().Play();
             GameManager.keyIsCollected = true;
         }
-        else if (col.collider.tag == "Home" && GameManager.keyIsCollected) 
+        else if (col.collider.tag == "Home" && GameManager.keyIsCollected)
         {
             ScenesManager.Victory();
         }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
+        
     void Start() 
     {
         // set default difficulty
