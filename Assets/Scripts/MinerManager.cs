@@ -17,6 +17,7 @@ public class MinerManager : MonoBehaviour
     private int dwarfSeen;
     void Start()
     {
+  
         initLocation = transform.position;
         following = false;
         rigidbody = GetComponent<Rigidbody>();
@@ -26,12 +27,15 @@ public class MinerManager : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
             lookDirection = new Vector3(0,0,1);
+
         }
         else 
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             lookDirection = new Vector3(1,0,0);
+            transform.Rotate(0f, 90f, 0f);
         }
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
         GetComponent<Rigidbody>().freezeRotation = true;
     }
 
@@ -55,14 +59,21 @@ public class MinerManager : MonoBehaviour
             {
                 direction = -direction;
                 timer = changeTime;
+                GetComponent<Rigidbody>().freezeRotation = false;
                 if (vertical)
                 {
                     lookDirection.z = -lookDirection.z;
+                    transform.Rotate(0f, 180f, 0f);
+                    // transform.rotation = Quaternion.Euler(new Vector4(transform.localRotation.x, transform.localRotation.y, -transform.localRotation.z));
+
                 }
                 else
                 {
                     lookDirection.x = -lookDirection.x;
+                    transform.Rotate(0f, 180f, 0f);
+                    // transform.rotation = Quaternion.Euler(new Vector4(-transform.localRotation.x, transform.localRotation.y, transform.localRotation.z));
                 }
+                GetComponent<Rigidbody>().freezeRotation = true;
             }
 
             Vector3 position = rigidbody.position;
