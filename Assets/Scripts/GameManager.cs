@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
         foods.ForEach(food =>
         {
             int n = Random.Range(0, 5); 
-            Instantiate(foodPrefab[n], new Vector3(food.x, food.y, food.z), Quaternion.identity);
+            GameObject foodObject = Instantiate(foodPrefab[n], new Vector3(food.x, 3, food.z), Quaternion.identity);
+            foodObject.transform.Rotate(-90f, 0f, 0f);
         });
 
         int ranNumber = Random.Range(0, 4);

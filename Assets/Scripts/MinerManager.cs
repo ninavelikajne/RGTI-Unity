@@ -64,14 +64,12 @@ public class MinerManager : MonoBehaviour
                 {
                     lookDirection.z = -lookDirection.z;
                     transform.Rotate(0f, 180f, 0f);
-                    // transform.rotation = Quaternion.Euler(new Vector4(transform.localRotation.x, transform.localRotation.y, -transform.localRotation.z));
 
                 }
                 else
                 {
                     lookDirection.x = -lookDirection.x;
                     transform.Rotate(0f, 180f, 0f);
-                    // transform.rotation = Quaternion.Euler(new Vector4(-transform.localRotation.x, transform.localRotation.y, transform.localRotation.z));
                 }
                 GetComponent<Rigidbody>().freezeRotation = true;
             }
