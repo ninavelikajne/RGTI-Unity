@@ -15,3 +15,17 @@ public class Location {
     }
 }
 
+public class Miner {
+    public Location location;
+    public bool vertical;
+    public int speed;
+    public int changeTime;
+
+    public Miner(Location location, bool vertical, int speed, int changeTime) {
+        this.location = location;
+        this.vertical = vertical;
+        this.speed = speed;
+        this.changeTime = changeTime;
+    }
+}
+

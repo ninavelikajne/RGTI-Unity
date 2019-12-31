@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static int score;
     public static bool pause;
 
-    public GameObject foodPrefab;
+    public GameObject[] foodPrefab;
     public GameObject minerPrefab;
     public GameObject keyPrefab;
 
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private float timer;
 
     private List<Location> foods = new List<Location>();
-    private List<Location> miners = new List<Location>();
+    private List<Miner> miners = new List<Miner>();
     private List<Location> key = new List<Location>();
 
     void Start() 
@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         keyIsCollected = false;
         score = 0;
-        difficulty = 0; // pol zbirs
 
         pause = false;
         Cursor.visible = false;
@@ -98,7 +97,8 @@ public class GameManager : MonoBehaviour
     void placeObjects() {
         foods.ForEach(food =>
         {
-            Instantiate(foodPrefab, new Vector3(food.x, food.y, food.z), Quaternion.identity);
+            int n = Random.Range(0, 5); 
+            Instantiate(foodPrefab[n], new Vector3(food.x, food.y, food.z), Quaternion.identity);
         });
 
         int ranNumber = Random.Range(0, 4);
@@ -106,7 +106,11 @@ public class GameManager : MonoBehaviour
 
         miners.ForEach(miner =>
         {
-            Instantiate(minerPrefab, new Vector3(miner.x, miner.y, miner.z), Quaternion.identity);
+            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, miner.location.y, miner.location.z), Quaternion.identity);
+            MinerManager minerManager = minerObject.GetComponent<MinerManager>();
+            minerManager.vertical = miner.vertical;
+            minerManager.speed = miner.speed;
+            minerManager.changeTime = miner.changeTime;
         });
     }
 
@@ -130,10 +134,10 @@ public class GameManager : MonoBehaviour
             
 
 
-            miners.Add(new Location(-1.3f, 4f, 10.3f));
-            miners.Add(new Location(2.5f, 4f, 5f));
-            miners.Add(new Location(-28f, 4f, 0.2f));
-            miners.Add(new Location(-23.2f, 4f, -20f));
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
+            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
 
 
             key.Add(new Location(-26.5f, 4f, 7.5f));
@@ -142,92 +146,72 @@ public class GameManager : MonoBehaviour
             key.Add(new Location(-19.5f, 4f, 14f));
             key.Add(new Location(-14f, 4f, 19f));
         }
-        /*
         else if (difficulty == 1)
         {
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
+           foods.Add(new Location(10.4f, 4f, 23.2f));
+            foods.Add(new Location(-10f, 4f, 23.2f));
+            foods.Add(new Location(8f, 4f, 12.5f));
+            foods.Add(new Location(8f, 4f, 1f));
+            foods.Add(new Location(-7f, 4f, 1.5f));
+            foods.Add(new Location(-8.7f, 4f, 9.6f));
+            foods.Add(new Location(-8.7f, 4f, 12.5f));
+            foods.Add(new Location(-26.5f, 4f, 19f));
+            foods.Add(new Location(-29f, 4f, -4f));
+            foods.Add(new Location(-24f, 4f, -11f));
+            foods.Add(new Location(13.5f, 4f, 1.7f));
+            foods.Add(new Location(27f, 4f, -2f));
 
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
 
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
+
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
+            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
+            miners.Add(new Miner(new Location(-5f, 4f, 23.3f), false, 3, 3));
+            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 3, 3));   
+            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 3, 3));
+
+
+
+            key.Add(new Location(-26.5f, 4f, 7.5f));
+            key.Add(new Location(2f, 4f, -15f));
+            key.Add(new Location(-29f, 4f, -8f));
+            key.Add(new Location(-19.5f, 4f, 14f));
+            key.Add(new Location(-14f, 4f, 19f));
 
         }
         else {
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
-            foods.append(new Location());
+            foods.Add(new Location(10.4f, 4f, 23.2f));
+            foods.Add(new Location(-10f, 4f, 23.2f));
+            foods.Add(new Location(8f, 4f, 12.5f));
+            foods.Add(new Location(8f, 4f, 1f));
+            foods.Add(new Location(-7f, 4f, 1.5f));
+            foods.Add(new Location(-8.7f, 4f, 9.6f));
+            foods.Add(new Location(-8.7f, 4f, 12.5f));
+            foods.Add(new Location(-26.5f, 4f, 19f));
+            foods.Add(new Location(-29f, 4f, -4f));
+            foods.Add(new Location(-24f, 4f, -11f));
+            foods.Add(new Location(13.5f, 4f, 1.7f));
+            foods.Add(new Location(27f, 4f, -2f));
 
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
-            miners.location(new Location());
 
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
-            key.append(new Location());
-        }*/
+
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
+            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
+            miners.Add(new Miner(new Location(-5f, 4f, 23.3f), false, 3, 3));
+            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 3, 3));
+            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 3, 3));
+            miners.Add(new Miner(new Location(5.6f, 4f, -5.5f), true, 3, 3));
+
+
+
+            key.Add(new Location(-26.5f, 4f, 7.5f));
+            key.Add(new Location(2f, 4f, -15f));
+            key.Add(new Location(-29f, 4f, -8f));
+            key.Add(new Location(-19.5f, 4f, 14f));
+            key.Add(new Location(-14f, 4f, 19f));
+        }
     }
 }

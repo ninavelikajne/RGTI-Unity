@@ -14,7 +14,7 @@ public class BerkmandlcManager : MonoBehaviour
    
     void Update()
     {
-        //Debug.Log(transform.localPosition);
+        Debug.Log(transform.localPosition);
         if (!GameManager.pause)
         {
             move();
@@ -62,23 +62,23 @@ public class BerkmandlcManager : MonoBehaviour
         GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector4(-1f * (mouseY * 90f), mouseX * 360f, transform.localRotation.z)));
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
-        if (col.tag == "Miner")
+        if (col.collider.tag == "Miner")
         {
             ScenesManager.GameOver();
         }
-        else if (col.tag == "Food") 
+        else if (col.collider.tag == "Food") 
         {
             Destroy(col.gameObject);
             GameManager.score++;
         }
-        else if (col.tag == "Key") 
+        else if (col.collider.tag == "Key") 
         {
             Destroy(col.gameObject);
             GameManager.keyIsCollected = true;
         }
-        else if (col.tag == "Home" && GameManager.keyIsCollected) 
+        else if (col.collider.tag == "Home" && GameManager.keyIsCollected) 
         {
             ScenesManager.Victory();
         }

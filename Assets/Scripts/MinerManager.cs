@@ -22,12 +22,15 @@ public class MinerManager : MonoBehaviour
         dwarfSeen = 0;
         if (vertical) 
         {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
             lookDirection = new Vector3(0,0,1);
         }
         else 
         {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             lookDirection = new Vector3(1,0,0);
         }
+        GetComponent<Rigidbody>().freezeRotation = true;
     }
 
     void Update()
