@@ -17,7 +17,6 @@ public class BerkmandlcManager : MonoBehaviour
    
     void Update()
     {
-        //Debug.Log(transform.localPosition);
         if (!GameManager.pause)
         {
             move();

@@ -102,8 +102,14 @@ public class GameManager : MonoBehaviour
             foodObject.transform.Rotate(-90f, 0f, 0f);
         });
 
-        int ranNumber = Random.Range(0, 4);
-        Instantiate(keyPrefab, new Vector3(key[ranNumber].x, key[ranNumber].y, key[ranNumber].z), Quaternion.identity);
+        key.ForEach(key =>
+        {
+            int n = Random.Range(0, 5);
+            GameObject foodObject = Instantiate(keyPrefab, new Vector3(key.x, key.y, key.z), Quaternion.identity);
+            //foodObject.transform.Rotate(-90f, 0f, 0f);
+        });
+        //int ranNumber = Random.Range(0, 4);
+        //Instantiate(keyPrefab, new Vector3(key[ranNumber].x, key[ranNumber].y, key[ranNumber].z), Quaternion.identity);
 
         miners.ForEach(miner =>
         {
@@ -141,11 +147,11 @@ public class GameManager : MonoBehaviour
             miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
 
 
-            key.Add(new Location(-26.5f, 4f, 7.5f));
-            key.Add(new Location(2f, 4f, -15f));
-            key.Add(new Location(-29f, 4f, -8f));
-            key.Add(new Location(-19.5f, 4f, 14f));
-            key.Add(new Location(-14f, 4f, 19f));
+            key.Add(new Location(-27f, 3.5f, 7.5f));
+            key.Add(new Location(2f, 3.5f, -15f));
+            key.Add(new Location(-29f, 3.5f, -8f));
+            key.Add(new Location(-19.5f, 3.5f, 14f));
+            key.Add(new Location(-14f, 3.5f, 19f));
         }
         else if (difficulty == 1)
         {
@@ -174,11 +180,11 @@ public class GameManager : MonoBehaviour
 
 
 
-            key.Add(new Location(-26.5f, 4f, 7.5f));
-            key.Add(new Location(2f, 4f, -15f));
-            key.Add(new Location(-29f, 4f, -8f));
-            key.Add(new Location(-19.5f, 4f, 14f));
-            key.Add(new Location(-14f, 4f, 19f));
+            key.Add(new Location(-27f, 3.5f, 7.45f));
+            key.Add(new Location(2f, 3.5f, -14.4f));
+            key.Add(new Location(-28f, 3.5f, -8.4f));
+            key.Add(new Location(-19.34f, 3.5f, 14f));
+            key.Add(new Location(-14.5f, 3.5f, 19.2f));
 
         }
         else {
@@ -208,11 +214,11 @@ public class GameManager : MonoBehaviour
 
 
 
-            key.Add(new Location(-26.5f, 4f, 7.5f));
-            key.Add(new Location(2f, 4f, -15f));
-            key.Add(new Location(-29f, 4f, -8f));
-            key.Add(new Location(-19.5f, 4f, 14f));
-            key.Add(new Location(-14f, 4f, 19f));
+            key.Add(new Location(-27f, 3.5f, 7.5f));
+            key.Add(new Location(2f, 3.5f, -15f));
+            key.Add(new Location(-29f, 3.5f, -8f));
+            key.Add(new Location(-19.5f, 3.5f, 14f));
+            key.Add(new Location(-14f, 3.5f, 19f));
         }
     }
 }

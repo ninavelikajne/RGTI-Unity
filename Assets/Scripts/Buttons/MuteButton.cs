@@ -13,6 +13,10 @@ public class MuteButton : MonoBehaviour
     void Start()
     {
         muted = false;
+        if (AudioListener.volume == 0f) {
+            gameObject.GetComponent<Image>().sprite = mutedSprite;
+            muted = true;
+        }
     }
 
     public void ToggleMute()
@@ -21,12 +25,12 @@ public class MuteButton : MonoBehaviour
         if (muted)
         {
             gameObject.GetComponent<Image>().sprite = mutedSprite;
-            AudioListener.volume = 1f;
+            AudioListener.volume = 0f;
         }
         else
         {
             gameObject.GetComponent<Image>().sprite = unmutedSprite;
-            AudioListener.volume = 0f;
+            AudioListener.volume = 1f;
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
