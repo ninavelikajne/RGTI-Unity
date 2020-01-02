@@ -73,14 +73,14 @@ public class BerkmandlcManager : MonoBehaviour
         else if (col.collider.tag == "Food") 
         {
             Destroy(col.gameObject);
-            GetComponent<AudioSource>().clip=eatingSound;
+            GetComponent<AudioSource>().clip = eatingSound;
             GetComponent<AudioSource>().Play();
             GameManager.score++;
         }
         else if (col.collider.tag == "Key") 
         {
             Destroy(col.gameObject);
-            GetComponent<AudioSource>().clip=keySound;
+            GetComponent<AudioSource>().clip = keySound;
             GetComponent<AudioSource>().Play();
             GameManager.keyIsCollected = true;
         }
