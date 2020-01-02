@@ -90,9 +90,10 @@ public class MinerManager : MonoBehaviour
         }
         else 
         {
+            Vector3 targetDirection = target.transform.position - transform.position;
+            this.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, targetDirection, 1.0f * Time.deltaTime, 0.0f));
             this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.06f);
-            dwarfSeen--;
-            
+            dwarfSeen--;   
         }
     }
 
