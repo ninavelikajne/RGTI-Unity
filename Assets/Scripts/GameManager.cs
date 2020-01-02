@@ -102,14 +102,8 @@ public class GameManager : MonoBehaviour
             foodObject.transform.Rotate(-90f, 0f, 0f);
         });
 
-        key.ForEach(key =>
-        {
-            int n = Random.Range(0, 5);
-            GameObject foodObject = Instantiate(keyPrefab, new Vector3(key.x, key.y, key.z), Quaternion.identity);
-            //foodObject.transform.Rotate(-90f, 0f, 0f);
-        });
-        //int ranNumber = Random.Range(0, 4);
-        //Instantiate(keyPrefab, new Vector3(key[ranNumber].x, key[ranNumber].y, key[ranNumber].z), Quaternion.identity);
+        int ranNumber = Random.Range(0, 4);
+        Instantiate(keyPrefab, new Vector3(key[ranNumber].x, key[ranNumber].y, key[ranNumber].z), Quaternion.identity);
 
         miners.ForEach(miner =>
         {
