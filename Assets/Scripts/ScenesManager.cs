@@ -15,7 +15,7 @@ public class ScenesManager : MonoBehaviour
     public void StartGame()
     {
         Cursor.visible = true;
-        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
     public static void StartFromStart()

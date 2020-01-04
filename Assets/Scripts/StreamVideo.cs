@@ -39,6 +39,6 @@ public class StreamVideo : MonoBehaviour
     IEnumerator StartCountdown()
     {
         yield return new WaitForSeconds(videoLength);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Start");
     }
 }

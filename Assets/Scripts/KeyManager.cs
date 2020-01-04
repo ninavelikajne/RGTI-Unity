@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
-    Transform from;
-    Transform to;
-    float speed = 1f;
     float y;
 
     void Start() {
