@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220f395b-d1be-44c4-81e3-9f4e02ce33a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MinerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MinerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StreamVideo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StreamVideo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/button_click.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/button_click.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RGTI-Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RGTI-Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Victory.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Victory.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +109,7 @@
       <workItem from="1577964429979" duration="1079000" />
       <workItem from="1577975929517" duration="113000" />
       <workItem from="1577976140223" duration="957000" />
-      <workItem from="1578133911504" duration="3657000" />
+      <workItem from="1578133911504" duration="3992000" />
     </task>
     <servers />
   </component>
