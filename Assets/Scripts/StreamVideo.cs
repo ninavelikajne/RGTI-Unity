@@ -18,6 +18,7 @@ public class StreamVideo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UnityEngine.Cursor.visible = false;
         StartCoroutine(PlayVideo());
         StartCoroutine(StartCountdown());
     }
@@ -39,6 +40,7 @@ public class StreamVideo : MonoBehaviour
     IEnumerator StartCountdown()
     {
         yield return new WaitForSeconds(videoLength);
+        UnityEngine.Cursor.visible = true;
         SceneManager.LoadScene("Start");
     }
 }

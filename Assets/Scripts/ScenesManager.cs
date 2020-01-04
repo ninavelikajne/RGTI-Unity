@@ -14,12 +14,16 @@ public class ScenesManager : MonoBehaviour
 
     public void StartGame()
     {
+        GameObject audioObject = GameObject.Find("BtnAudioSource");
+        audioObject.GetComponent<AudioSource>().Play();
         Cursor.visible = true;
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
     public static void StartFromStart()
     {
+        GameObject audioObject = GameObject.Find("BtnAudioSource");
+        audioObject.GetComponent<AudioSource>().Play();
         Cursor.visible = true;
         SceneManager.LoadScene("Start", LoadSceneMode.Single);
     }
@@ -38,6 +42,8 @@ public class ScenesManager : MonoBehaviour
 
     public void OnExit()
     {
+        GameObject audioObject = GameObject.Find("BtnAudioSource");
+        audioObject.GetComponent<AudioSource>().Play();
         Application.Quit();
     }
 }
