@@ -31,7 +31,6 @@ public class StreamVideo : MonoBehaviour
             yield return waitForSeconds;
             break;
         }
-    
         rawImage.texture = videoPlayer.texture;
         videoPlayer.Play();
         audioSource.Play();
