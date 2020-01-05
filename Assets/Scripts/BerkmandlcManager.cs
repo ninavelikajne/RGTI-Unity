@@ -93,7 +93,7 @@ public class BerkmandlcManager : MonoBehaviour
         }
         else if (col.collider.tag == "Home" && !GameManager.keyIsCollected)
         {
-            findKey.text = "NAJPREJ POIŠČČI KLJUČ!";
+            findKey.text = "NAJPREJ POIŠČI KLJUČ!";
             Invoke("Hide", 3);
         }
     }
