@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BerkmandlcManager : MonoBehaviour
 {
     public AudioClip eatingSound;
     public AudioClip keySound;
-    
-    
+    public Text findKey;
+
+
     public int speed;
     void Start()
     {
@@ -21,7 +24,7 @@ public class BerkmandlcManager : MonoBehaviour
         {
             move();
         }
-      
+
     }
 
     void move()
@@ -70,17 +73,17 @@ public class BerkmandlcManager : MonoBehaviour
         {
             ScenesManager.GameOver();
         }
-        else if (col.collider.tag == "Food") 
+        else if (col.collider.tag == "Food")
         {
             Destroy(col.gameObject);
-            GetComponent<AudioSource>().clip=eatingSound;
+            GetComponent<AudioSource>().clip = eatingSound;
             GetComponent<AudioSource>().Play();
             GameManager.score++;
         }
-        else if (col.collider.tag == "Key") 
+        else if (col.collider.tag == "Key")
         {
             Destroy(col.gameObject);
-            GetComponent<AudioSource>().clip=keySound;
+            GetComponent<AudioSource>().clip = keySound;
             GetComponent<AudioSource>().Play();
             GameManager.keyIsCollected = true;
         }
@@ -88,5 +91,14 @@ public class BerkmandlcManager : MonoBehaviour
         {
             ScenesManager.Victory();
         }
+        else if (col.collider.tag == "Home" && !GameManager.keyIsCollected)
+        {
+            findKey.text = "NAJPREJ POIŠČČI KLJUČ!";
+            Invoke("Hide", 3);
+        }
+    }
+
+    void Hide() {
+        findKey.text = "";
     }
 }
