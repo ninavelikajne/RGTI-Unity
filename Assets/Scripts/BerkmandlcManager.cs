@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BerkmandlcManager : MonoBehaviour
 {
     public AudioClip eatingSound;
+    public AudioClip drinkingSound;
     public AudioClip keySound;
     public Text findKey;
 
@@ -14,7 +15,7 @@ public class BerkmandlcManager : MonoBehaviour
     public int speed;
     void Start()
     {
-        speed = 5;
+        speed = 3;
     }
 
    
@@ -54,8 +55,8 @@ public class BerkmandlcManager : MonoBehaviour
             GetComponent<Rigidbody>().MovePosition(transform.localPosition - position);
         }
 
-        transform.Rotate(0, Input.GetAxis("Mouse X") * 3, 0);
-        Camera.main.transform.Rotate(-Input.GetAxis("Mouse Y") *3, 0, 0);
+        transform.Rotate(0, Input.GetAxis("Mouse X") * 2, 0);
+        Camera.main.transform.Rotate(-Input.GetAxis("Mouse Y") *1, 0, 0);
     }
 
     void OnCollisionEnter(Collision col)
@@ -68,6 +69,13 @@ public class BerkmandlcManager : MonoBehaviour
         {
             Destroy(col.gameObject);
             GetComponent<AudioSource>().clip = eatingSound;
+            GetComponent<AudioSource>().Play();
+            GameManager.score++;
+        }
+        else if (col.collider.tag == "Drink")
+        {
+            Destroy(col.gameObject);
+            GetComponent<AudioSource>().clip = drinkingSound;
             GetComponent<AudioSource>().Play();
             GameManager.score++;
         }

@@ -50,6 +50,7 @@ public class MinerManager : MonoBehaviour
         if (following && dwarfSeen == 0) {
             transform.position = initLocation;
             following = false;
+            target.GetComponent<BerkmandlcManager>().speed = 3;
         }
         if (dwarfSeen <= 0)
         {   
@@ -100,17 +101,20 @@ public class MinerManager : MonoBehaviour
 
     void look() 
     {
-        Debug.DrawRay(transform.position, lookDirection * 7, Color.green); 
+        Vector3 position = transform.position;
+        position.y = position.y + 0.5f;
+        Debug.DrawRay(position, lookDirection * 7, Color.green);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, lookDirection, out hit, 7, LayerMask.GetMask("Berkmandlc")))
+        if (Physics.Raycast(position, lookDirection, out hit, 7, LayerMask.GetMask("Berkmandlc")))
         {
             if (hit.collider != null)
             {
                 following = true;
                 target = hit.collider.gameObject;
-                dwarfSeen = 600;
+                dwarfSeen = 500;
                 BerkmandlcManager manager = target.GetComponent<BerkmandlcManager>();
-                manager.speed = 7;
+                manager.speed = 5;
+                speed = 3;
             }
         }
     }

@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         miners.ForEach(miner =>
         {
-            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, 3, miner.location.z), Quaternion.identity);
+            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, 2.9f, miner.location.z), Quaternion.identity);
             MinerManager minerManager = minerObject.GetComponent<MinerManager>();
             minerManager.vertical = miner.vertical;
             minerManager.speed = miner.speed;
@@ -132,14 +132,13 @@ public class GameManager : MonoBehaviour
             foods.Add(new Location(-24f, 4f, -11f));
             foods.Add(new Location(13.5f, 4f, 1.7f));
             foods.Add(new Location(27f, 4f, -2f));
-            
 
 
-            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
-            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
-            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
-            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
 
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 1, 5));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 1, 5));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 1, 4));
+            miners.Add(new Miner(new Location(-20f, 4f, -19.5f), false, 1, 6));
 
             key.Add(new Location(-27f, 3.5f, 7.5f));
             key.Add(new Location(2f, 3.5f, -15f));
@@ -164,13 +163,13 @@ public class GameManager : MonoBehaviour
 
 
 
-            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
-            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
-            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
-            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
-            miners.Add(new Miner(new Location(-5f, 4f, 23.3f), false, 3, 3));
-            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 3, 3));   
-            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 3, 3));
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 1, 5));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 1, 5));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 1, 4));
+            miners.Add(new Miner(new Location(-20f, 4f, -19.5f), false, 1, 6));
+            miners.Add(new Miner(new Location(-3f, 4f, 23.3f), false, 1, 5));
+            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 1, 5));   
+            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 1, 2));
 
 
 
@@ -197,14 +196,14 @@ public class GameManager : MonoBehaviour
 
 
 
-            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 3, 3));
-            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 3, 3));
-            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 2, 3));
-            miners.Add(new Miner(new Location(-23.2f, 4f, -19.5f), false, 3, 4));
-            miners.Add(new Miner(new Location(-5f, 4f, 23.3f), false, 3, 3));
-            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 3, 3));
-            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 3, 3));
-            miners.Add(new Miner(new Location(5.6f, 4f, -5.5f), true, 3, 3));
+            miners.Add(new Miner(new Location(-1.3f, 4f, 10.3f), false, 1, 5));
+            miners.Add(new Miner(new Location(-7f, 4f, 5f), false, 1, 5));
+            miners.Add(new Miner(new Location(-28f, 4f, 0.2f), false, 1, 4));
+            miners.Add(new Miner(new Location(-20f, 4f, -19.5f), false, 1, 6));
+            miners.Add(new Miner(new Location(-3f, 4f, 23.3f), false, 1, 5));
+            miners.Add(new Miner(new Location(-9.5f, 4f, -11.5f), false, 1, 5));
+            miners.Add(new Miner(new Location(-23f, 4f, -9f), true, 1, 5));
+            miners.Add(new Miner(new Location(5.6f, 4f, -3f), true, 1, 5));
 
 
 

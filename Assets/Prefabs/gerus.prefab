@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6497009060909495916}
   - component: {fileID: 1296487052485430439}
   m_Layer: 0
-  m_Name: gerus
-  m_TagString: Food
+  m_Name: Gerus
+  m_TagString: Drink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

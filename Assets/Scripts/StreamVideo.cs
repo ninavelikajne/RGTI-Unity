@@ -13,9 +13,8 @@ public class StreamVideo : MonoBehaviour
     public RawImage rawImage;
     public VideoPlayer videoPlayer;
     public AudioSource audioSource;
-    public int videoLength = 30;
+    public int videoLength = 46;
     
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(PlayVideo());
@@ -32,6 +31,7 @@ public class StreamVideo : MonoBehaviour
             break;
         }
         rawImage.texture = videoPlayer.texture;
+        rawImage.color = Color.white;
         videoPlayer.Play();
         audioSource.Play();
     }

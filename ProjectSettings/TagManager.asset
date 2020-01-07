@@ -9,6 +9,7 @@ TagManager:
   - Food
   - Key
   - Home
+  - Drink
   layers:
   - Default
   - TransparentFX
