@@ -73,7 +73,82 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Rudar_Color(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: Rudar_Color(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Base
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 2.4068527, z: 0.12411385}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 32.67064, y: 32.67064, z: 7.8399577}
+    - name: Base.001
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 1.8255354, z: 0.10926646}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 70.20526, y: 70.20526, z: 70.20526}
+    - name: Beard
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 0.67361856, z: 1.0303829}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 15.658328, y: 14.834982, z: 54.782795}
+    - name: Ears
+      parentName: Rudar_Color(Clone)
+      position: {x: -1.0059222, y: 1.8786207, z: 0.31272942}
+      rotation: {x: -0.70338184, y: 0.1102792, z: -0.14849973, w: 0.68632376}
+      scale: {x: 25.628757, y: 10.12975, z: 25.628757}
+    - name: Eye_Brows
+      parentName: Rudar_Color(Clone)
+      position: {x: -0.42569536, y: 2.2615337, z: 0.8706306}
+      rotation: {x: 0.06640792, y: 0.7039816, z: -0.7039816, w: -0.06640793}
+      scale: {x: -15.251871, y: -25.183296, z: -10.401278}
+    - name: Eye_Lids_U
+      parentName: Rudar_Color(Clone)
+      position: {x: -0.47737095, y: 2.047357, z: 0.89854735}
+      rotation: {x: -0.06058535, y: 0.7045065, z: -0.7045065, w: 0.060585376}
+      scale: {x: -11.473149, y: -12.5096, z: -8.506318}
+    - name: Eyes
+      parentName: Rudar_Color(Clone)
+      position: {x: -0.44257054, y: 1.873618, z: 0.92244107}
+      rotation: {x: -0.06742287, y: 1.820904e-24, z: -1.4970895e-17, w: 0.9977245}
+      scale: {x: 26.940083, y: 26.94008, z: 26.94008}
+    - name: Light.001
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0053713853, y: 2.8428497, z: 1.2458545}
+      rotation: {x: 0.008021768, y: 3.319793e-24, z: 1.7811771e-18, w: 0.9999678}
+      scale: {x: 36.79305, y: 36.79305, z: 36.79305}
+    - name: Light_Belt
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 2.6744018, z: 0.12411385}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 25.833406, y: 25.833406, z: 6.1992297}
+    - name: Mustache
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 1.3796966, z: 0.9834217}
+      rotation: {x: -0.00000013767878, y: 0.7071069, z: -0.7071067, w: 0.00000013767877}
+      scale: {x: 42.91292, y: 13.461902, z: 11.509446}
+    - name: Nose
+      parentName: Rudar_Color(Clone)
+      position: {x: 0.0042955577, y: 1.7059007, z: 1.0302887}
+      rotation: {x: -0.8223069, y: 0, z: -0, w: 0.5690443}
+      scale: {x: 22.218721, y: 25.207247, z: 22.487581}
+    - name: Cube.001
+      parentName: Rudar_Color(Clone)
+      position: {x: -0, y: -1.1511457, z: 0.118952796}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 44.880695, y: 44.880695, z: 53.432}
+    - name: Cylinder
+      parentName: Rudar_Color(Clone)
+      position: {x: -0.49484366, y: -2.8263192, z: 0.085646026}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 44.422638, y: 45.924503, z: 41.848515}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -84,10 +159,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

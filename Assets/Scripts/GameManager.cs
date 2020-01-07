@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         miners.ForEach(miner =>
         {
-            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, miner.location.y, miner.location.z), Quaternion.identity);
+            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, 3, miner.location.z), Quaternion.identity);
             MinerManager minerManager = minerObject.GetComponent<MinerManager>();
             minerManager.vertical = miner.vertical;
             minerManager.speed = miner.speed;
