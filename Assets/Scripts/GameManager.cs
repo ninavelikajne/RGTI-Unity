@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         timerCount();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             pause = !pause;
             PauseButton.TogglePause();
