@@ -54,17 +54,8 @@ public class BerkmandlcManager : MonoBehaviour
             GetComponent<Rigidbody>().MovePosition(transform.localPosition - position);
         }
 
-        float mouseX = (Input.mousePosition.x / Screen.width) - 0.5f;
-        float mouseY = (Input.mousePosition.y / Screen.height) - 0.5f;
-        if (mouseY > 0.1f) 
-        {
-            mouseY = 0.1f;
-        }
-        if (mouseY < -0.1f)
-        {
-            mouseY = -0.1f;
-        }
-        GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector4(-1f * (mouseY * 90f), mouseX * 360f, transform.localRotation.z)));
+        transform.Rotate(0, Input.GetAxis("Mouse X") * 3, 0);
+        Camera.main.transform.Rotate(-Input.GetAxis("Mouse Y") *3, 0, 0);
     }
 
     void OnCollisionEnter(Collision col)
