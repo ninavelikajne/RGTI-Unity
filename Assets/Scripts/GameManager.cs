@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         });
 
         int ranNumber = Random.Range(0, 4);
-        Instantiate(keyPrefab, new Vector3(key[ranNumber].x, key[ranNumber].y, key[ranNumber].z), Quaternion.identity);
+        Instantiate(keyPrefab, new Vector3(key[0].x, key[0].y, key[0].z), Quaternion.identity);
 
         miners.ForEach(miner =>
         {

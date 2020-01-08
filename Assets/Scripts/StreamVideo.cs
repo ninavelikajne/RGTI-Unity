@@ -12,7 +12,6 @@ public class StreamVideo : MonoBehaviour
 
     public RawImage rawImage;
     public VideoPlayer videoPlayer;
-    public AudioSource audioSource;
     public int videoLength = 46;
     
     void Start()
@@ -23,6 +22,9 @@ public class StreamVideo : MonoBehaviour
 
     IEnumerator PlayVideo()
     {
+        string url = Application.streamingAssetsPath + "/Uvod.mp4";
+        url = "file://" + url;
+        videoPlayer.url = url;
         videoPlayer.Prepare();
         WaitForSeconds waitForSeconds = new WaitForSeconds(1);
         while (!videoPlayer.isPrepared)
@@ -33,7 +35,6 @@ public class StreamVideo : MonoBehaviour
         rawImage.texture = videoPlayer.texture;
         rawImage.color = Color.white;
         videoPlayer.Play();
-        audioSource.Play();
     }
     
     IEnumerator StartCountdown()
