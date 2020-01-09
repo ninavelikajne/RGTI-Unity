@@ -3,7 +3,62 @@ guid: 269e94e3804cafe408a047e6eb18f094
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cinabarid
+    second: {fileID: 2100000, guid: 0ba9b654128798b498a1e457628e37d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark stone
+    second: {fileID: 2100000, guid: c7691eb41d8c6d545aaaade5ce58d9be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kovina
+    second: {fileID: 2100000, guid: de324d447629c2249a461cc4770537a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silver
+    second: {fileID: 2100000, guid: f7c6bc39c74b5e443b35e471ae70724a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone 2
+    second: {fileID: 2100000, guid: 11b9ee526b01ff644a566f108348b51b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone 3
+    second: {fileID: 2100000, guid: 6a21d0374b3694b4a8ce8765c79a5378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Temna kovina
+    second: {fileID: 2100000, guid: a645645468d105e43921fb3684f9799f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 3cc0a756f74c5404297b0decb1aad5aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood 2
+    second: {fileID: 2100000, guid: 3be421df22f1ba54985f31702021ad12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood 3
+    second: {fileID: 2100000, guid: ca4f4c9a475472a4cb786799f837b1e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood 4
+    second: {fileID: 2100000, guid: ede630bf77cef734a97d44fb742315c4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +86,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

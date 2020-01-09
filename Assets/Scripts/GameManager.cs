@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         timerCount();
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             pause = !pause;
             PauseButton.TogglePause();
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         miners.ForEach(miner =>
         {
-            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, 2.9f, miner.location.z), Quaternion.identity);
+            GameObject minerObject = Instantiate(minerPrefab, new Vector3(miner.location.x, 2.95f, miner.location.z), Quaternion.identity);
             MinerManager minerManager = minerObject.GetComponent<MinerManager>();
             minerManager.vertical = miner.vertical;
             minerManager.speed = miner.speed;

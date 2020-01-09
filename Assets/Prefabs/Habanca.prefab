@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1876555873356101}
   - component: {fileID: 5463611800366035854}
   m_Layer: 0
-  m_Name: ocvirkovca
+  m_Name: Habanca
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745844948221672857}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 24.645828, y: 3, z: -1.1945124}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 20.393206, y: 20.393206, z: 20.393206}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &5997145285807076796
 MeshFilter:
   m_ObjectHideFlags: 0
