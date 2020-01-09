@@ -23,9 +23,6 @@ public class StreamVideo : MonoBehaviour
     IEnumerator PlayVideo()
     {
         videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Uvod.mp4");
-        //string url = Application.streamingAssetsPath + "/Uvod.mp4";
-        //url = "file://" + url;
-        //videoPlayer.url = url;
         videoPlayer.Prepare();
         WaitForSeconds waitForSeconds = new WaitForSeconds(1);
         while (!videoPlayer.isPrepared)
