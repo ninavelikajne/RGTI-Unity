@@ -10,11 +10,12 @@ public class BerkmandlcManager : MonoBehaviour
     public AudioClip drinkingSound;
     public AudioClip keySound;
     public Text findKey;
-
-
     public int speed;
+
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         speed = 3;
     }
 
@@ -32,27 +33,34 @@ public class BerkmandlcManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
+            animator.SetBool("walking", true);
             Vector3 position = transform.right * speed * Time.deltaTime;
             position[1] = 0f;
             GetComponent<Rigidbody>().MovePosition(transform.localPosition-position);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
+            animator.SetBool("walking", true);
             Vector3 position = transform.right * speed * Time.deltaTime;
             position[1] = 0f;
             GetComponent<Rigidbody>().MovePosition(transform.localPosition + position);
         }
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
+            animator.SetBool("walking", true);
             Vector3 position = transform.forward * speed * Time.deltaTime;
             position[1] = 0f;
             GetComponent<Rigidbody>().MovePosition(transform.localPosition + position);
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
+            animator.SetBool("walking", true);
             Vector3 position = transform.forward * speed * Time.deltaTime;
             position[1] = 0f;
             GetComponent<Rigidbody>().MovePosition(transform.localPosition - position);
+        }
+        else {
+            animator.SetBool("walking", false);
         }
 
         transform.Rotate(0, Input.GetAxis("Mouse X") * 2, 0);
