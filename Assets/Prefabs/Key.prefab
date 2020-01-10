@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 43972265605276523}
   - component: {fileID: 9063281176513354077}
   - component: {fileID: 3385501162430784932}
+  - component: {fileID: 3369501070103457198}
   m_Layer: 0
-  m_Name: Kljuc
-  m_TagString: Untagged
+  m_Name: Key
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3369501070103457198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3947230603376185720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4252453, y: 8.610351, z: 20.500051}
+  m_Center: {x: -0.68355525, y: -0.9514649, z: -6.7260227}

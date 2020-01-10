@@ -11,6 +11,7 @@ public class StreamVideo : MonoBehaviour
 {
 
     public RawImage rawImage;
+    public Text text;
     public VideoPlayer videoPlayer;
     public int videoLength = 46;
     
@@ -33,6 +34,10 @@ public class StreamVideo : MonoBehaviour
         rawImage.texture = videoPlayer.texture;
         rawImage.color = Color.white;
         videoPlayer.Play();
+        /** WEBGL EXCEPTION **/
+        /*if (!videoPlayer.isPlaying) {
+            text.text = "\n\nV nastavitvah brskalnika omogoči samodejno predvajanje zvoka in videa. \n Ali pa klikni gumb preskoči in preskoči uvodno zgodbo.";
+        }*/
     }
     
     IEnumerator StartCountdown()
